@@ -1,0 +1,233 @@
+/* basic setup and colors */
+:root {
+  --color-dark: #111111;
+  --color-gray: #e0e0e0;
+  --color-footer: #333333;
+  --color-accent: #00D2FF; 
+  --color-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-dark);
+}
+
+/* --- HEADER --- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--color-gray);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* nav link setup */
+.main-nav a {
+  text-decoration: none;
+  color: var(--color-dark);
+  margin-left: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  
+  /* this tells the link to animate any changes over 0.3 seconds */
+  transition: color 0.3s ease; 
+}
+
+/* ANIMATION 1: simple color fade on hover */
+.main-nav a:hover {
+  color: var(--color-accent);
+}
+
+/* --- HERO --- */
+.hero {
+  background-color: var(--color-gray);
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  text-align: center;
+}
+
+.hero-arrow {
+  font-size: 3rem;
+  cursor: pointer;
+  /* sets up the animation for the arrows */
+  transition: color 0.3s ease;
+}
+
+/* ANIMATION 2: arrows change color when hovered */
+.hero-arrow:hover {
+  color: var(--color-accent);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+/* --- FEATURE SECTION --- */
+.feature {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 80px 50px;
+}
+
+.feature-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.feature-image {
+  flex: 1;
+  overflow: hidden; /* keeps the zoomed image inside the box */
+  border-radius: 8px;
+}
+
+/* ANIMATION 3: Image zoom setup */
+.feature-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease; /* a bit slower for a nice effect */
+}
+
+/* the image scales up slightly when hovered */
+.feature-image:hover img {
+  transform: scale(1.1);
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text h2 {
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.feature-text h3 {
+  font-weight: 300;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* button setup */
+.btn-primary, .btn-submit {
+  padding: 12px 25px;
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 1px;
+  
+  /* sets up the button animation */
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* ANIMATION 4: buttons invert colors on hover */
+.btn-primary:hover, .btn-submit:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* --- SPONSORS --- */
+.sponsors {
+  background-color: #f9f9f9;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.sponsor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.sponsor-box {
+  width: 180px;
+  height: 100px;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  background-color: var(--color-white);
+  color: #555;
+  
+  /* sets up the box pop-out animation */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* ANIMATION 5: sponsor boxes pop out slightly */
+.sponsor-box:hover {
+  transform: translateY(-5px); /* moves it up by 5 pixels */
+  border-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+/* --- FOOTER --- */
+.site-footer {
+  background-color: var(--color-footer);
+  color: var(--color-white);
+  padding: 60px 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-col form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.form-col input, .form-col textarea {
+  padding: 10px;
+  border: none;
+  font-family: inherit;
+}
+
+.sitemap-col ul {
+  list-style: none;
+  margin-top: 15px;
+  line-height: 2;
+}
+
+.sitemap-col a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sitemap-col a:hover {
+  color: var(--color-accent);
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
